@@ -424,19 +424,43 @@
 
         <!-- Project: Video -->
         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-projects">
-          <div class="card shadow-sm">
-            <video class="img-fluid card-img-top" controls>
-              <source src="assets/img/Grad.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+          <div class="card shadow-lg rounded-4">
+            <div class="ratio ratio-16x9">
+              <iframe class="img-fluid card-img-top rounded-top" src="https://drive.google.com/file/d/1S26W0Z9KC0f9QLKVnuYRAS4ISH8cxxCu/preview" allow="autoplay"></iframe>
+            </div>
             <div class="card-body">
-              <h4 class="card-title">Graduation Video</h4>
-              <p class="card-text">A short film capturing key moments.</p>
-              <a href="assets/img/Grad.mp4" title="Graduation Video" class="glightbox btn btn-outline-secondary"><i class="bi bi-zoom-in"></i> View</a>
-              <a href="portfolio-details.html" title="More Details" class="btn btn-outline-secondary"><i class="bi bi-link-45deg"></i> More</a>
+              <h4 class="card-title text-center">Graduation Video</h4>
+              <p class="card-text text-center">A short film capturing key moments.</p>
+              <div class="d-flex justify-content-center">
+                <!-- View Button that opens video in a new tab -->
+                <a href="https://drive.google.com/file/d/1S26W0Z9KC0f9QLKVnuYRAS4ISH8cxxCu/view?usp=sharing" 
+                  title="Graduation Video" 
+                  class="btn btn-outline-primary mx-2" target="_blank">
+                  <i class="bi bi-zoom-in"></i> View
+                </a>
+                <!-- Fullscreen Button -->
+                <button class="btn btn-outline-secondary mx-2" onclick="openFullscreen()">
+                  <i class="bi bi-arrows-fullscreen"></i> Fullscreen
+                </button>
+              </div>
             </div>
           </div>
         </div><!-- End Project Item -->
+
+        <script>
+          function openFullscreen() {
+            var iframe = document.querySelector('iframe');
+            if (iframe.requestFullscreen) {
+              iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+              iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+              iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+              iframe.msRequestFullscreen();
+            }
+          }
+</script>
 
         <!-- Document Item 1 -->
         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-documents">
